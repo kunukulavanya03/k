@@ -46,20 +46,20 @@ cd backend
 - User registration and login
 - Password reset
 - User profile management
-- CRUD operations on data
+- Item CRUD operations
 
 ## API Endpoints
 
-- `POST /api/register` - Register a new user
-- `POST /api/login` - Login an existing user
-- `POST /api/reset-password` - Reset a user's password
-- `GET /api/profile` - Get a user's profile information
-- `PUT /api/profile` - Update a user's profile information
-- `GET /api/data` - Get all data
-- `POST /api/data` - Create new data
-- `GET /api/data/{id}` - Get data by ID
-- `PUT /api/data/{id}` - Update data by ID
-- `DELETE /api/data/{id}` - Delete data by ID
+- `POST /api/register` - Register a new user account.
+- `POST /api/login` - Log in to an existing user account.
+- `GET /api/profile` - View the current user's profile information.
+- `PUT /api/profile` - Edit the current user's profile information.
+- `POST /api/password-reset` - Request a password reset for the current user's account.
+- `GET /api/users` - View a list of all users.
+- `POST /api/items` - Add a new item to the database.
+- `GET /api/items` - View a list of all items in the database.
+- `PUT /api/items/{item_id}` - Edit an existing item in the database.
+- `DELETE /api/items/{item_id}` - Delete an item from the database.
 
 ## License
 
