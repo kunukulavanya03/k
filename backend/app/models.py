@@ -1,35 +1,27 @@
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from pydantic import BaseModel
-
-Base = declarative_base()
+from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy.orm import relationship
+from app.database import Base
 
 class User(Base):
-    __tablename__ = 'users'
+    __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
-    username = Column(String, index=True)
-    email = Column(String, index=True)
+    username = Column(String, unique=True, index=True)
+    email = Column(String, unique=True, index=True)
     password = Column(String)
-
-    def __init__(self, username, email, password):
-        self.username = username
-        self.email = email
-        self.password = password
+    items = relationship("Item", back_populates="user")
 
     def __repr__(self):
-        return f'User(username={self.username}, email={self.email})'
+        return f"User(id={self.id}, username='{self.username}', email='{self.email}')"
 
-class UserData(Base):
-    __tablename__ = 'data'
+class Item(Base):
+    __tablename__ = "items"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
     description = Column(String, index=True)
-
-    def __init__(self, name, description):
-        self.name = name
-        self.description = description
+    user_id = Column(Integer, ForeignKey("users.id"))
+    user = relationship("User", back_populates="items")
 
     def __repr__(self):
-        return f'UserData(name={self.name}, description={self.description})'
+        return f"Item(id={self.id}, name='{self.name}', description='{self.description}')"
