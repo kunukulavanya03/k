@@ -6,7 +6,7 @@ Backend API for k
 
 - **Frontend**: React
 - **Backend**: FastAPI + SQLAlchemy
-- **Frontend Source**: GitHub ([Repository](https://github.com/HimaShankarReddyEguturi/Createtestingapplication))
+- **Frontend Source**: GitHub ([Repository](https://github.com/HimaShankarReddyEguturi/Hotelbookinguidesign.git))
 
 ## Project Structure
 
@@ -43,23 +43,23 @@ cd backend
 
 ## Features
 
-- User registration and login
-- Password reset
+- User authentication and authorization
+- Data CRUD operations
+- Password reset functionality
 - User profile management
-- Item CRUD operations
 
 ## API Endpoints
 
-- `POST /api/register` - Register a new user account.
-- `POST /api/login` - Log in to an existing user account.
-- `GET /api/profile` - View the current user's profile information.
-- `PUT /api/profile` - Edit the current user's profile information.
-- `POST /api/password-reset` - Request a password reset for the current user's account.
-- `GET /api/users` - View a list of all users.
-- `POST /api/items` - Add a new item to the database.
-- `GET /api/items` - View a list of all items in the database.
-- `PUT /api/items/{item_id}` - Edit an existing item in the database.
-- `DELETE /api/items/{item_id}` - Delete an item from the database.
+- `POST /api/register` - Create a new user account.
+- `POST /api/login` - Authenticate an existing user account.
+- `POST /api/password_reset` - Initiate a password reset for an existing user account.
+- `GET /api/profile` - Retrieve the current user's profile information.
+- `PUT /api/profile` - Update the current user's profile information.
+- `GET /api/data` - Retrieve a list of data.
+- `POST /api/data` - Create a new data entry.
+- `GET /api/data/{id}` - Retrieve a single data entry by ID.
+- `PUT /api/data/{id}` - Update a single data entry by ID.
+- `DELETE /api/data/{id}` - Delete a single data entry by ID.
 
 ## License
 
