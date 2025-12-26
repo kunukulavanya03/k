@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Search as SearchIcon, MapPin, Calendar, Users, Star, Wifi, Coffee, Dumbbell, Filter, SlidersHorizontal } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { login, register, logout } from './services/api';
 
 interface SearchProps {
   onNavigate: (hotel: any) => void;
@@ -9,6 +10,20 @@ interface SearchProps {
 export function Search({ onNavigate }: SearchProps) {
   const [searchLocation, setSearchLocation] = useState('New York');
   const [activeFilter, setActiveFilter] = useState('All');
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // TODO: Replace with actual API endpoint
+        const data = await api.get('/api/items');
+        // Update state with fetched data
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    
+    fetchData();
+  }, []);
+
 
   const hotels = [
     {
