@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Calendar, Users, Bed, Check, MapPin, Star, Wifi, Coffee, Dumbbell, ParkingCircle, UtensilsCrossed, MessageCircle } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { login, register, logout } from './services/api';
 
 interface BookingProps {
   hotel: any;
@@ -12,6 +13,20 @@ export function Booking({ hotel, onNavigate }: BookingProps) {
   const [checkIn, setCheckIn] = useState('');
   const [checkOut, setCheckOut] = useState('');
   const [guests, setGuests] = useState(1);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // TODO: Replace with actual API endpoint
+        const data = await api.get('/api/items');
+        // Update state with fetched data
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    
+    fetchData();
+  }, []);
+
 
   const rooms = [
     {
