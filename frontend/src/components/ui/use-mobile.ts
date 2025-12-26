@@ -1,4 +1,5 @@
 import * as React from "react";
+import { login, register, logout } from './services/api';
 
 const MOBILE_BREAKPOINT = 768;
 
