@@ -6,7 +6,7 @@ Backend API for k
 
 - **Frontend**: React
 - **Backend**: FastAPI + SQLAlchemy
-- **Frontend Source**: GitHub ([Repository](https://github.com/HimaShankarReddyEguturi/Hotelbookinguidesign.git))
+- **Frontend Source**: GitHub ([Repository](https://github.com/HimaShankarReddyEguturi/Hotelbookinguidesign))
 
 ## Project Structure
 
@@ -43,23 +43,24 @@ cd backend
 
 ## Features
 
-- User authentication and authorization
-- Data CRUD operations
-- Password reset functionality
+- User registration and login
 - User profile management
+- Content creation and management
+- Following and unfollowing other users
+- Notification system
 
 ## API Endpoints
 
-- `POST /api/register` - Create a new user account.
-- `POST /api/login` - Authenticate an existing user account.
-- `POST /api/password_reset` - Initiate a password reset for an existing user account.
-- `GET /api/profile` - Retrieve the current user's profile information.
-- `PUT /api/profile` - Update the current user's profile information.
-- `GET /api/data` - Retrieve a list of data.
-- `POST /api/data` - Create a new data entry.
-- `GET /api/data/{id}` - Retrieve a single data entry by ID.
-- `PUT /api/data/{id}` - Update a single data entry by ID.
-- `DELETE /api/data/{id}` - Delete a single data entry by ID.
+- `POST /api/register` - Register a new user
+- `POST /api/login` - Log in to the application
+- `GET /api/profile` - Get the current user's profile information
+- `PUT /api/profile` - Update the current user's profile information
+- `POST /api/content` - Create a new piece of content
+- `GET /api/content` - Get a list of all content
+- `GET /api/content/{content_id}` - Get a specific piece of content
+- `PUT /api/content/{content_id}` - Update a specific piece of content
+- `DELETE /api/content/{content_id}` - Delete a specific piece of content
+- `POST /api/follow` - Follow another user
 
 ## License
 
