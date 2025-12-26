@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { LogIn, Mail, Lock, MessageCircle } from 'lucide-react';
+import { login, register, logout } from './services/api';
 
 interface LoginProps {
   onNavigate: () => void;
@@ -7,6 +8,20 @@ interface LoginProps {
 
 export function Login({ onNavigate }: LoginProps) {
   const [isLogin, setIsLogin] = useState(true);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // TODO: Replace with actual API endpoint
+        const data = await api.get('/api/items');
+        // Update state with fetched data
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    
+    fetchData();
+  }, []);
+
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
